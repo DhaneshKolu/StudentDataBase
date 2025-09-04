@@ -22,7 +22,7 @@ def add_student():
     marks = int(input("Enter Marks: "))
     cursor.execute("INSERT INTO student VALUES (?, ?, ?, ?)", (roll_no, name, dept, marks))
     conn.commit()
-    print("✅ Student added successfully!")
+    print("Student added successfully!")
 
 def view_students():
     cursor.execute("SELECT * FROM student")
@@ -39,13 +39,13 @@ def update_marks():
     marks = int(input("Enter New Marks: "))
     cursor.execute("UPDATE student SET marks=? WHERE roll_no=?", (marks, roll_no))
     conn.commit()
-    print("✅ Marks updated!")
+    print("Marks updated!")
 
 def delete_student():
     roll_no = int(input("Enter Roll No to Delete: "))
     cursor.execute("DELETE FROM student WHERE roll_no=?", (roll_no,))
     conn.commit()
-    print("✅ Student deleted!")
+    print("Student deleted!")
 
 def search_student():
     term = input("Enter Roll No or Name to search: ")
@@ -85,12 +85,13 @@ def main_menu():
         elif choice == "5":
             search_student()
         elif choice == "6":
-            print("Exiting program... 👋")
+            print("Exiting program... ")
             break
         else:
             print("❌ Invalid choice! Try again.")
 
 if __name__ == "__main__":
-    print("Program started ✅")
+    print("Program started ")
     main_menu()
     conn.close()
+
